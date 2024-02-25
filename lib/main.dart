@@ -1,7 +1,6 @@
 import 'package:car_application/bottom_nav_bar.dart';
 import 'package:flutter/material.dart';
 
-import 'view/home_screen.dart';
 
 void main() {
   runApp(const MyApp());

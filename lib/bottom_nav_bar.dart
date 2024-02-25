@@ -1,10 +1,7 @@
 import 'package:car_application/view/battery_page.dart';
 import 'package:car_application/view/home_screen.dart';
 import 'package:car_application/view/safety_page.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:iconsax/iconsax.dart';
 
 import 'view/interior_page.dart';
 
@@ -19,7 +16,7 @@ class _CustomButtomNavbarState extends State<CustomButtomNavbar> {
   int currentIndex = 0;
 
   List<Widget> pages = [
-    const HomeScreen(),
+    HomeScreen(),
     const InteriorPage(),
     const BatteryPage(),
     const SafetySecurityPage(),
