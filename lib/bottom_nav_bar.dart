@@ -2,18 +2,14 @@ import 'package:car_application/view/battery_page.dart';
 import 'package:car_application/view/home_screen.dart';
 import 'package:car_application/view/safety_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import 'controller/bottom_navbar_controller.dart';
 import 'view/interior_page.dart';
 
-class CustomButtomNavbar extends StatefulWidget {
-  const CustomButtomNavbar({super.key});
-
-  @override
-  State<CustomButtomNavbar> createState() => _CustomButtomNavbarState();
-}
-
-class _CustomButtomNavbarState extends State<CustomButtomNavbar> {
-  int currentIndex = 0;
+// ignore: must_be_immutable
+class CustomButtomNavbar extends ConsumerWidget {
+  CustomButtomNavbar({super.key});
 
   List<Widget> pages = [
     HomeScreen(),
@@ -23,7 +19,8 @@ class _CustomButtomNavbarState extends State<CustomButtomNavbar> {
   ];
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final currentIndex = ref.watch(currentIndexProvider);
     return Scaffold(
       body: pages[currentIndex],
       bottomNavigationBar: BottomNavigationBar(
@@ -32,9 +29,7 @@ class _CustomButtomNavbarState extends State<CustomButtomNavbar> {
         backgroundColor: const Color.fromARGB(255, 242, 242, 242),
         currentIndex: currentIndex,
         onTap: (value) {
-          setState(() {
-            currentIndex = value;
-          });
+          ref.read(currentIndexProvider.notifier).state = value;
         },
         items: [
           BottomNavigationBarItem(

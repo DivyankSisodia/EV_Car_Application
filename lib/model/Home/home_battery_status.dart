@@ -15,7 +15,7 @@ class DHomeBatteryStatus extends StatelessWidget {
       children: [
         Text(
           'Battery',
-          style: GoogleFonts.inter(
+          style: GoogleFonts.poppins(
             fontSize: 20.0,
             fontWeight: FontWeight.w400,
           ),
@@ -28,7 +28,7 @@ class DHomeBatteryStatus extends StatelessWidget {
               padding: const EdgeInsets.only(bottom: 2.0),
               child: Text(
                 '150Km',
-                style: GoogleFonts.inter(
+                style: GoogleFonts.poppins(
                   fontSize: 14.0,
                 ),
               ),
@@ -36,7 +36,7 @@ class DHomeBatteryStatus extends StatelessWidget {
             const Gap(10),
             Text(
               '52%',
-              style: GoogleFonts.inter(
+              style: GoogleFonts.poppins(
                 fontSize: 20.0,
               ),
             ),

@@ -10,7 +10,7 @@ class TitleHeading extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       'Good Morning,',
-      style: GoogleFonts.inter(
+      style: GoogleFonts.poppins(
         fontSize: 30.0,
         fontWeight: FontWeight.w400,
       ),

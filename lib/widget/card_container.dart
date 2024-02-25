@@ -1,6 +1,7 @@
-import 'package:car_application/data/item.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import '../data/item.dart';
 
 class CardContainer extends StatelessWidget {
   final Item item;
@@ -12,42 +13,35 @@ class CardContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 180,
+      height: 150,
       width: 150,
       decoration: BoxDecoration(
         color: item.color,
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(10),
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
-            width: 150,
+          Expanded(
             child: Padding(
               padding:
-                  const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10),
+                  const EdgeInsets.symmetric(horizontal: 20.0, vertical: 15),
               child: Text(
                 item.name,
-                style: GoogleFonts.inter(
+                style: GoogleFonts.poppins(
                   fontSize: 16.0,
-                  fontWeight: FontWeight.w400,
+                  fontWeight: FontWeight.w500,
                 ),
               ),
             ),
           ),
-          SizedBox(
-            width: 150,
+          Expanded(
             child: Row(
               mainAxisAlignment: MainAxisAlignment.end,
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                Image.asset(
-                  item.imagePath,
-                  fit: BoxFit.fitWidth,
-                  height: 100,
-                  width: 100,
-                ),
+                Image.asset(item.imagePath),
               ],
             ),
           ),

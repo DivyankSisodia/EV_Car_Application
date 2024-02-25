@@ -10,7 +10,7 @@ class TitleName extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       'Divyank',
-      style: GoogleFonts.inter(
+      style: GoogleFonts.poppins(
         fontSize: 30.0,
         fontWeight: FontWeight.bold,
       ),

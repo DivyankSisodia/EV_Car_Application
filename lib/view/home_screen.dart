@@ -1,4 +1,5 @@
 // ignore_for_file: file_names
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import '../data/item.dart';
@@ -64,21 +65,30 @@ class HomeScreen extends StatelessWidget {
               const Gap(20),
 
               // Cards
-              SizedBox(
-                height: 350,
-                child: GridView.builder(
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 25.0, vertical: 6),
+                child: SizedBox(
+                  height: 350,
+                  child: GridView.builder(
+                    scrollDirection: Axis.vertical,
+                    shrinkWrap: true,
+                    physics: const NeverScrollableScrollPhysics(),
+                    itemCount: 4,
+                    padding: EdgeInsets.zero,
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      mainAxisSpacing: 10,
+                      crossAxisSpacing: 10,
+                    ),
+                    itemBuilder: (context, index) {
+                      return CardContainer(item: items[index]);
+                    },
                   ),
-                  itemBuilder: (context, index) {
-                    return Padding(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 25.0, vertical: 10),
-                      child: CardContainer(item: items[index]),
-                    );
-                  },
                 ),
               ),
+              const Gap(30),
             ],
           ),
         ),
