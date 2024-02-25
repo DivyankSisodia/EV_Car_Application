@@ -1,3 +1,4 @@
+import 'package:car_application/bottom_nav_bar.dart';
 import 'package:flutter/material.dart';
 
 import 'view/home_screen.dart';
@@ -13,8 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: HomeScreen()
+      home: CustomButtomNavbar(),
     );
   }
 }
-
