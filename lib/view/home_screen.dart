@@ -1,4 +1,7 @@
 // ignore_for_file: file_names
+import 'package:car_application/view/battery_page.dart';
+import 'package:car_application/view/interior_page.dart';
+import 'package:car_application/view/safety_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -83,7 +86,50 @@ class HomeScreen extends StatelessWidget {
                       crossAxisSpacing: 10,
                     ),
                     itemBuilder: (context, index) {
-                      return CardContainer(item: items[index]);
+                      return GestureDetector(
+                        onTap: () {
+                          // Navigate to the corresponding screen based on the tapped item
+                          switch (index) {
+                            case 0:
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => HomeScreen(),
+                                ),
+                              );
+                              break;
+                            case 1:
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const InteriorPage(),
+                                ),
+                              );
+                              break;
+                            case 2:
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const BatteryPage(),
+                                ),
+                              );
+                              break;
+                            case 3:
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) =>
+                                      const SafetySecurityPage(),
+                                ),
+                              );
+                              break;
+                            default:
+                              // Do nothing
+                              break;
+                          }
+                        },
+                        child: CardContainer(item: items[index]),
+                      );
                     },
                   ),
                 ),

@@ -6,6 +6,11 @@ import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../controller/switch_controller.dart';
+import '../model/interior/heading_text.dart';
+import '../model/interior/interior_image.dart';
+import '../model/interior/temperature_button.dart';
+import '../model/interior/temperature_schedule.dart';
+import '../model/interior/temperature_text.dart';
 import '../model/interior/time_card.dart';
 import '../widget/title_heading.dart';
 
@@ -19,65 +24,14 @@ class InteriorPage extends ConsumerWidget {
       body: SafeArea(
         child: Column(
           children: [
-            Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 25.0, vertical: 10.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  IconButton(
-                    onPressed: () {},
-                    icon: const Icon(CupertinoIcons.back),
-                  ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      const TitleHeading(
-                        title: 'Interior & Comfort',
-                      ),
-                      Text(
-                        'Cooling to 21°C',
-                        style: GoogleFonts.poppins(
-                          fontSize: 15.0,
-                          fontWeight: FontWeight.w400,
-                        ),
-                      )
-                    ],
-                  )
-                ],
-              ),
-            ),
+            const InteriorHeadingtext(),
 
             const Gap(10),
 
             // This is the main content of the page
-            Column(
-              children: [
-                Center(
-                  child: Text(
-                    'In-car Temperature',
-                    style: GoogleFonts.poppins(
-                      fontSize: 15.0,
-                      fontWeight: FontWeight.w400,
-                    ),
-                  ),
-                ),
-                Center(
-                  child: Text(
-                    '32°C',
-                    style: GoogleFonts.poppins(
-                      fontSize: 32.0,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 250,
-              width: MediaQuery.of(context).size.width,
-              child: Image.asset('assets/images/iterior.png'),
-            ),
+            const TemperatureText(),
+            
+            const InteriorImage(),
 
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 28.0),
@@ -95,68 +49,21 @@ class InteriorPage extends ConsumerWidget {
 
             const Gap(12),
 
-            SizedBox(
-              height: 250,
-              child: ListView(
-                shrinkWrap: true,
-                children: [
-                  TimeCard(
-                    days: 'M W F',
-                    time: '00:00 to 08:00',
-                    switchStateProvider: val1Provider,
-                    toggle: toggleVal1,
-                  ),
-                  const Gap(20),
-                  TimeCard(
-                    days: 'Tu Th Sat',
-                    time: '22:00 to 09:00',
-                    switchStateProvider: val2Provider,
-                    toggle: toggleVal2,
-                  ),
-                  const Gap(20),
-                  TimeCard(
-                    days: 'W F Sun',
-                    time: '23:00 to 06:00',
-                    switchStateProvider: val3Provider,
-                    toggle: toggleVal3,
-                  ),
-                ],
-              ),
-            ),
+            const TemperatureSchedule(),
+
             const Gap(8),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20.0),
-              child: Container(
-                height: 80,
-                width: MediaQuery.of(context).size.width,
-                decoration: BoxDecoration(
-                  border: Border.all(
-                    color: const Color.fromARGB(255, 100, 100, 100),
-                    width: 2,
-                  ),
-                  color: const Color(0xFFF5F5F5),
-                  borderRadius: BorderRadius.circular(12.0),
-                ),
-                child: Row(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                      child: Image.asset('assets/icons/power-off.png'),
-                    ),
-                    Text(
-                      'Stop Climate',
-                      style: GoogleFonts.poppins(
-                        fontSize: 23.0,
-                        fontWeight: FontWeight.w300,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            )
+
+            const TemperatureButton()
           ],
         ),
       ),
     );
   }
 }
+
+
+
+
+
+
+
