@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -20,7 +21,7 @@ class InteriorPage extends ConsumerWidget {
           children: [
             Padding(
               padding:
-                  const EdgeInsets.symmetric(horizontal: 25.0, vertical: 20.0),
+                  const EdgeInsets.symmetric(horizontal: 25.0, vertical: 10.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -47,7 +48,7 @@ class InteriorPage extends ConsumerWidget {
               ),
             ),
 
-            const Gap(15),
+            const Gap(10),
 
             // This is the main content of the page
             Column(
@@ -73,7 +74,7 @@ class InteriorPage extends ConsumerWidget {
               ],
             ),
             SizedBox(
-              height: 255,
+              height: 250,
               width: MediaQuery.of(context).size.width,
               child: Image.asset('assets/images/iterior.png'),
             ),
@@ -94,30 +95,64 @@ class InteriorPage extends ConsumerWidget {
 
             const Gap(12),
 
-            Column(
-              children: [
-                TimeCard(
-                  days: 'M W F',
-                  time: '00:00 to 08:00',
-                  switchStateProvider: val1Provider,
-                  toggle: toggleVal1,
+            SizedBox(
+              height: 250,
+              child: ListView(
+                shrinkWrap: true,
+                children: [
+                  TimeCard(
+                    days: 'M W F',
+                    time: '00:00 to 08:00',
+                    switchStateProvider: val1Provider,
+                    toggle: toggleVal1,
+                  ),
+                  const Gap(20),
+                  TimeCard(
+                    days: 'Tu Th Sat',
+                    time: '22:00 to 09:00',
+                    switchStateProvider: val2Provider,
+                    toggle: toggleVal2,
+                  ),
+                  const Gap(20),
+                  TimeCard(
+                    days: 'W F Sun',
+                    time: '23:00 to 06:00',
+                    switchStateProvider: val3Provider,
+                    toggle: toggleVal3,
+                  ),
+                ],
+              ),
+            ),
+            const Gap(8),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              child: Container(
+                height: 80,
+                width: MediaQuery.of(context).size.width,
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    color: const Color.fromARGB(255, 100, 100, 100),
+                    width: 2,
+                  ),
+                  color: const Color(0xFFF5F5F5),
+                  borderRadius: BorderRadius.circular(12.0),
                 ),
-                const Gap(20),
-                TimeCard(
-                  days: 'Tu Th Sat',
-                  time: '22:00 to 09:00',
-                  switchStateProvider: val2Provider,
-                  toggle: toggleVal2,
+                child: Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                      child: Image.asset('assets/icons/power-off.png'),
+                    ),
+                    Text(
+                      'Stop Climate',
+                      style: GoogleFonts.poppins(
+                        fontSize: 23.0,
+                        fontWeight: FontWeight.w300,
+                      ),
+                    ),
+                  ],
                 ),
-                const Gap(20),
-                TimeCard(
-                  days: 'W F Sun',
-                  time: '23:00 to 06:00',
-                  switchStateProvider: val3Provider,
-                  toggle: toggleVal3,
-                ),
-                const Gap(20),
-              ],
+              ),
             )
           ],
         ),
