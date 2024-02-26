@@ -18,7 +18,9 @@ class DHomeHeading extends StatelessWidget {
           const Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              TitleHeading(),
+
+              TitleHeading(title: 'Good Morning,'),
+              
               TitleName(),
             ],
           ),
