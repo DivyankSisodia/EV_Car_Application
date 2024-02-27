@@ -1,8 +1,6 @@
 // ignore_for_file: file_names
-import 'package:car_application/view/battery_page.dart';
 import 'package:car_application/view/interior_page.dart';
 import 'package:car_application/view/safety_page.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import '../data/item.dart';
@@ -111,7 +109,7 @@ class HomeScreen extends StatelessWidget {
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) =>
-                                       SafetySecurityPage(),
+                                      const SafetySecurityPage(),
                                 ),
                               );
                               break;
@@ -120,7 +118,7 @@ class HomeScreen extends StatelessWidget {
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) =>
-                                       SafetySecurityPage(),
+                                      const SafetySecurityPage(),
                                 ),
                               );
                               break;

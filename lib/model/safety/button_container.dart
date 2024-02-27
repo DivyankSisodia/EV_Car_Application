@@ -1,3 +1,4 @@
+import 'package:car_application/view/phone_key_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:gap/gap.dart';
@@ -103,25 +104,35 @@ class ButtonContainer extends ConsumerWidget {
                     ),
                   ],
                 ),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Image.asset(
-                        'assets/icons/signal-stream.png',
-                        height: 30,
-                        width: 30,
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: ((context) => const PhoneKeyScreen()),
                       ),
-                      const Gap(5),
-                      Text(
-                        'Phone Key',
-                        style: GoogleFonts.poppins(
-                          fontSize: 22.0,
-                          fontWeight: FontWeight.w500,
+                    );
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Image.asset(
+                          'assets/icons/signal-stream.png',
+                          height: 30,
+                          width: 30,
                         ),
-                      ),
-                    ],
+                        const Gap(5),
+                        Text(
+                          'Phone Key',
+                          style: GoogleFonts.poppins(
+                            fontSize: 22.0,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),

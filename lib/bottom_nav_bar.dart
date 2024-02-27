@@ -1,4 +1,3 @@
-import 'package:car_application/view/battery_page.dart';
 import 'package:car_application/view/home_screen.dart';
 import 'package:car_application/view/safety_page.dart';
 import 'package:flutter/material.dart';
@@ -14,8 +13,8 @@ class CustomButtomNavbar extends ConsumerWidget {
   List<Widget> pages = [
     HomeScreen(),
     const InteriorPage(),
-    SafetySecurityPage(),
-    SafetySecurityPage(),
+    const SafetySecurityPage(),
+    const SafetySecurityPage(),
   ];
 
   @override

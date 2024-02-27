@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-import '../../widget/right_headingtext.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 
 class AnimatedImageContainer extends StatelessWidget {
   const AnimatedImageContainer({
@@ -89,37 +88,12 @@ class AnimatedImageContainer extends StatelessWidget {
                         CupertinoIcons.lock,
                         color: Color.fromARGB(255, 255, 255, 255),
                         size: 100,
-                      ),
+                    ),
               ),
             ],
           ),
         ],
       ),
-    );
-  }
-}
-
-class SafetyHeading extends StatelessWidget {
-  const SafetyHeading({
-    super.key,
-    required this.isPressed,
-  });
-
-  final bool isPressed;
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 25.0, vertical: 10.0),
-      child: isPressed
-          ? const RightHeadingText(
-              heading: 'Safety & Security',
-              subheading: 'Windows Open',
-            )
-          : const RightHeadingText(
-              heading: 'Safety & Security',
-              subheading: '',
-            ),
     );
   }
 }

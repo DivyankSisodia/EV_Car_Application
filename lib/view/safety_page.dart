@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:gap/gap.dart';
 import '../controller/interior_controller.dart';
 import '../model/safety/button_container.dart';
+import '../model/safety/heading_text.dart';
 import '../model/safety/image_container.dart';
 import '../model/safety/small_icon.dart';
 
