@@ -1,21 +1,15 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-import '../controller/switch_controller.dart';
 import '../model/interior/heading_text.dart';
 import '../model/interior/interior_image.dart';
 import '../model/interior/temperature_button.dart';
 import '../model/interior/temperature_schedule.dart';
 import '../model/interior/temperature_text.dart';
-import '../model/interior/time_card.dart';
-import '../widget/title_heading.dart';
 
 class InteriorPage extends ConsumerWidget {
-  const InteriorPage({Key? key}) : super(key: key);
+  const InteriorPage({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

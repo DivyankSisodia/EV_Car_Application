@@ -15,7 +15,7 @@ class TitleHeading extends StatelessWidget {
       title,
       style: GoogleFonts.poppins(
         fontSize: 25.0,
-        fontWeight: FontWeight.w400,
+        fontWeight: FontWeight.w500,
       ),
     );
   }

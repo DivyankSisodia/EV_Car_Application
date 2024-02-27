@@ -14,8 +14,8 @@ class CustomButtomNavbar extends ConsumerWidget {
   List<Widget> pages = [
     HomeScreen(),
     const InteriorPage(),
-    const BatteryPage(),
-    const SafetySecurityPage(),
+    SafetySecurityPage(),
+    SafetySecurityPage(),
   ];
 
   @override

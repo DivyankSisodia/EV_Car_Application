@@ -110,7 +110,8 @@ class HomeScreen extends StatelessWidget {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => const BatteryPage(),
+                                  builder: (context) =>
+                                       SafetySecurityPage(),
                                 ),
                               );
                               break;
@@ -119,7 +120,7 @@ class HomeScreen extends StatelessWidget {
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) =>
-                                      const SafetySecurityPage(),
+                                       SafetySecurityPage(),
                                 ),
                               );
                               break;
