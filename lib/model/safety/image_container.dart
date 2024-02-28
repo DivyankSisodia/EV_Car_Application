@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 
 class AnimatedImageContainer extends StatelessWidget {
   const AnimatedImageContainer({
@@ -13,7 +12,7 @@ class AnimatedImageContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: MediaQuery.of(context).size.height * 0.6,
+      height: MediaQuery.of(context).size.height * 0.58,
       child: Stack(
         children: [
           AnimatedPositioned(
@@ -88,7 +87,7 @@ class AnimatedImageContainer extends StatelessWidget {
                         CupertinoIcons.lock,
                         color: Color.fromARGB(255, 255, 255, 255),
                         size: 100,
-                    ),
+                      ),
               ),
             ],
           ),

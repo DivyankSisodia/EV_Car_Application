@@ -1,3 +1,4 @@
+import 'package:car_application/bottom_nav_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:gap/gap.dart';
@@ -9,55 +10,51 @@ import '../model/interior/temperature_schedule.dart';
 import '../model/interior/temperature_text.dart';
 
 class InteriorPage extends ConsumerWidget {
-  const InteriorPage({super.key});
+  const InteriorPage({super.key,});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       backgroundColor: const Color(0xFFF5F5F5),
       body: SafeArea(
-        child: Column(
-          children: [
-            const InteriorHeadingtext(),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              const InteriorHeadingtext(),
 
-            const Gap(10),
+              const Gap(10),
 
-            // This is the main content of the page
-            const TemperatureText(),
-            
-            const InteriorImage(),
+              // This is the main content of the page
+              const TemperatureText(),
 
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 28.0),
-              child: Align(
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  'Your Climate Schedule',
-                  style: GoogleFonts.poppins(
-                    fontSize: 15.0,
-                    fontWeight: FontWeight.w400,
+              const InteriorImage(),
+
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 28.0),
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    'Your Climate Schedule',
+                    style: GoogleFonts.poppins(
+                      fontSize: 15.0,
+                      fontWeight: FontWeight.w400,
+                    ),
                   ),
                 ),
               ),
-            ),
 
-            const Gap(12),
+              const Gap(12),
 
-            const TemperatureSchedule(),
+              const TemperatureSchedule(),
 
-            const Gap(8),
+              const Gap(8),
 
-            const TemperatureButton()
-          ],
+              const TemperatureButton()
+            ],
+          ),
         ),
       ),
+      bottomNavigationBar: const BottomNavBar(currentIndex: 0),
     );
   }
 }
-
-
-
-
-
-
-

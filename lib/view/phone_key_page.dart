@@ -67,23 +67,32 @@ class PhoneKeyScreen extends ConsumerWidget {
                   final snackBar = SnackBar(
                     content: Center(
                       child: Container(
-                        width: MediaQuery.of(context).size.width * 0.7,
-                        height: 50,
-                        decoration: BoxDecoration(
-                          color: const Color.fromARGB(255, 208, 208, 208),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: Center(
-                          child: Text(
-                            'Temporary Key Shared',
-                            style: GoogleFonts.poppins(
-                              color: Colors.black87,
-                              fontSize: 19.0,
-                              fontWeight: FontWeight.w400,
-                            ),
+                          width: MediaQuery.of(context).size.width * 0.7,
+                          height: 50,
+                          decoration: BoxDecoration(
+                            color: const Color.fromARGB(255, 208, 208, 208),
+                            borderRadius: BorderRadius.circular(10),
                           ),
-                        ),
-                      ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Center(
+                                child: Text(
+                                  'Temporary Key Shared',
+                                  style: GoogleFonts.poppins(
+                                    color: Colors.black87,
+                                    fontSize: 19.0,
+                                    fontWeight: FontWeight.w400,
+                                  ),
+                                ),
+                              ),
+                              const Icon(
+                                Icons.check_circle_sharp,
+                                color: Color.fromARGB(255, 18, 243, 134),
+                                size: 30,
+                              )
+                            ],
+                          )),
                     ),
                     duration: const Duration(seconds: 5),
                   );

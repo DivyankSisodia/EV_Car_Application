@@ -12,7 +12,7 @@ class TemperatureSchedule extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 250,
+      height: MediaQuery.of(context).size.height * 0.2,
       child: ListView(
         shrinkWrap: true,
         children: [

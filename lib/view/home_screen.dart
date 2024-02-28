@@ -1,4 +1,6 @@
 // ignore_for_file: file_names
+import 'package:car_application/view/Location_screen.dart';
+import 'package:car_application/view/battery_page.dart';
 import 'package:car_application/view/interior_page.dart';
 import 'package:car_application/view/safety_page.dart';
 import 'package:flutter/material.dart';
@@ -92,7 +94,7 @@ class HomeScreen extends StatelessWidget {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => HomeScreen(),
+                                  builder: (context) => const BatteryPage(),
                                 ),
                               );
                               break;
@@ -117,8 +119,7 @@ class HomeScreen extends StatelessWidget {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) =>
-                                      const SafetySecurityPage(),
+                                  builder: (context) => const LocationsAndMap(),
                                 ),
                               );
                               break;
