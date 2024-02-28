@@ -3,6 +3,7 @@
 import 'package:car_application/bottom_nav_bar.dart';
 import 'package:car_application/widget/right_headingtext.dart';
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -64,7 +65,7 @@ class LocationsAndMap extends StatelessWidget {
                         color: Color.fromARGB(255, 53, 53, 53),
                       ),
                       filled: true,
-                      fillColor: Colors.white,
+                      fillColor: const Color.fromARGB(255, 242, 242, 242),
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
                           borderSide: const BorderSide(
@@ -74,23 +75,46 @@ class LocationsAndMap extends StatelessWidget {
                   ),
                 ),
               ),
-              Container(
-                  height: MediaQuery.of(context).size.height * 0.09,
+              const Gap(6),
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20.0, vertical: 8),
+                child: Container(
+                  height: MediaQuery.of(context).size.height * 0.08,
                   width: MediaQuery.of(context).size.width,
-                  color: Colors.white,
+                  decoration: BoxDecoration(
+                    color: const Color.fromARGB(255, 242, 242, 242),
+                    borderRadius: BorderRadius.circular(10),
+                    border: Border.all(
+                      color: Colors.black87,
+                    ),
+                  ),
                   child: Row(
                     children: [
-                      Icon(
-                        Icons.bolt_outlined,
-                        color: Colors.grey.shade500,
-                      )
+                      Padding(
+                        padding: const EdgeInsets.all(15.0),
+                        child: Icon(
+                          Icons.bolt_outlined,
+                          color: Colors.grey.shade500,
+                        ),
+                      ),
+                      Text(
+                        'Search for a charger',
+                        style: GoogleFonts.poppins(
+                          color: Colors.black87,
+                          fontSize: 20.0,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
                     ],
-                  ))
+                  ),
+                ),
+              ),
             ],
           ),
         ),
       ),
-      bottomNavigationBar: const BottomNavBar(currentIndex: 0),
+      bottomNavigationBar: const BottomNavBar(currentIndex: 1),
     );
   }
 }
